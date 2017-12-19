@@ -9,7 +9,7 @@ bool is_Palindrome(string s){
   
   int j = s.length() - 1;
   
-  for(int i = 0; i < s.length(); i++){
+  for(int i = 0; i < s.length()/2; i++){
      if(s[i] == s[j])
        j--;
      else
@@ -23,7 +23,7 @@ bool is_Palindrome(string s){
 
 int main(){
   
-  string s = "mom";
+  string s = "deed";
   
   cout<<'\"'<<s<<"\" is ";
   
