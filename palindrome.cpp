@@ -9,6 +9,9 @@ bool is_Palindrome(string s){
   
   int j = s.length() - 1;
   
+  if(s.length() == 0)
+     return true;
+  
   for(int i = 0; i < s.length()/2; i++){
      if(s[i] == s[j])
        j--;
@@ -23,14 +26,23 @@ bool is_Palindrome(string s){
 
 int main(){
   
-  string s = "deed";
+  char s[25];
   
-  cout<<'\"'<<s<<"\" is ";
+  do{
+  cout<<"Input string: ";
+  cin.getline( s,25);
+  }while(s == NULL);
   
-  if(is_Palindrome(s))
-    cout<<"a palindrome."<<endl;
+  
+  if(s != NULL){
+    cout<<'\"'<<s<<"\" is ";
+    if(is_Palindrome(s))
+      cout<<"a palindrome."<<endl;
+    else
+      cout<<"not a palindrome."<<endl;
+  }
   else
-    cout<<"not a palindrome."<<endl;
+     cout<<"Invalid input\n";
   
   return 0;
 }
